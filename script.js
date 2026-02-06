@@ -68,7 +68,7 @@ async function checkout() {
 
 async function updateAdmin() {
   try {
-    const res = await fetch("https://your-backend.onrender.com/api/orders");
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/");
     const ordersData = await res.json();
     const table = document.getElementById("orders");
     table.innerHTML = "";
@@ -86,4 +86,5 @@ async function updateAdmin() {
 }
 
 updateAdmin();
+
 
