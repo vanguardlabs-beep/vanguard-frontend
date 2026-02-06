@@ -47,7 +47,7 @@ async function checkout() {
   const order = { items: cart, total: total.toFixed(2) };
 
   try {
-    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/orders", {
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order)
@@ -66,13 +66,13 @@ async function checkout() {
     }
   } catch (e) {
     console.error(e);
-    alert("Cannot connect to backend. Make sure CORS is enabled on the server.");
+    alert("Cannot connect to backend. Make sure the backend is running and CORS is enabled.");
   }
 }
 
 async function updateAdmin() {
   try {
-    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/orders");
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/orders");
     if (!res.ok) throw new Error("Failed to fetch orders");
 
     const ordersData = await res.json();
