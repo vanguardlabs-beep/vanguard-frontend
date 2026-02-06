@@ -30,4 +30,13 @@ nav a:hover { text-decoration:underline; }
 .admin table { width:100%; border-collapse:collapse; margin-top:15px; }
 .admin th, .admin td { border:1px solid #ccc; padding:10px; text-align:center; }
 footer { background:#0b1320; color:#aaa; padding:30px 0; text-align:center; margin-top:60px; }
+.admin-login { background:white; padding:30px; border-radius:10px; margin-top:40px; box-shadow:0 5px 15px rgba(0,0,0,0.06); }
+.admin-login input { padding:10px; margin-right:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px; }
+.admin-login button { padding:10px 20px; background:#2563eb; color:white; border:none; border-radius:6px; cursor:pointer; }
+.admin-login button:hover { background:#1e4fd1; }
+.checkout-form { margin-top: 20px; display:flex; flex-direction:column; }
+.checkout-form input,
+.checkout-form textarea { margin-bottom: 10px; padding: 10px; border:1px solid #ccc; border-radius:6px; font-size:14px; }
+.checkout-form button { padding:12px; border:none; border-radius:6px; background:#0a7c3e; color:white; font-weight:600; cursor:pointer; }
+.checkout-form button:hover { background:#065f2a; }
 @media (max-width:768px) { .hero h1 { font-size:32px; } }
