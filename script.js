@@ -47,7 +47,7 @@ async function checkout() {
   const order = { items: cart, total: total.toFixed(2) };
 
   try {
-    const res = await fetch("https://your-backend.onrender.com/api/order", {
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order)
@@ -86,3 +86,4 @@ async function updateAdmin() {
 }
 
 updateAdmin();
+
