@@ -1,5 +1,6 @@
 let cart = [];
 let orders = [];
+let adminToken = null;
 
 function toggleCart() {
   document.getElementById("cart").classList.toggle("open");
@@ -37,14 +38,28 @@ function updateCart() {
   document.getElementById("count").innerText = cart.length;
 }
 
+// --- Checkout with customer info ---
 async function checkout() {
   if (cart.length === 0) {
     alert("Your cart is empty.");
     return;
   }
 
+  const name = document.getElementById("customerName").value.trim();
+  const email = document.getElementById("customerEmail").value.trim();
+  const address = document.getElementById("customerAddress").value.trim();
+
+  if (!name || !email || !address) {
+    alert("Please fill in all your details.");
+    return;
+  }
+
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-  const order = { items: cart, total: total.toFixed(2) };
+  const order = {
+    customer: { name, email, address },
+    items: cart,
+    total: total.toFixed(2)
+  };
 
   try {
     const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/order", {
@@ -57,22 +72,59 @@ async function checkout() {
 
     const data = await res.json();
     if (data.success) {
-      alert("Order placed: #" + data.order.id);
+      alert(`Order placed successfully! Order #${data.order.id}`);
       cart = [];
       updateCart();
-      updateAdmin();
+      document.getElementById("customerName").value = "";
+      document.getElementById("customerEmail").value = "";
+      document.getElementById("customerAddress").value = "";
+      if (adminToken) updateAdmin();
     } else {
       alert("Checkout failed");
     }
   } catch (e) {
     console.error(e);
-    alert("Cannot connect to backend. Make sure the backend is running and CORS is enabled.");
+    alert("Cannot connect to backend. Make sure backend is running.");
   }
 }
 
-async function updateAdmin() {
+// --- Admin Login ---
+async function adminLogin() {
+  const username = document.getElementById("adminUsername").value;
+  const password = document.getElementById("adminPassword").value;
+
   try {
-    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/orders");
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      alert("Login successful!");
+      adminToken = data.token;
+      document.getElementById("adminLogin").style.display = "none";
+      document.getElementById("adminSection").style.display = "block";
+      updateAdmin();
+    } else {
+      alert("Invalid credentials");
+    }
+  } catch (e) {
+    console.error(e);
+    alert("Login failed");
+  }
+}
+
+// --- Admin Orders Fetch ---
+async function updateAdmin() {
+  if (!adminToken) return;
+
+  try {
+    const res = await fetch("https://vanguard-backend-yl1g.onrender.com/api/orders", {
+      headers: { "Authorization": "Bearer " + adminToken }
+    });
+
     if (!res.ok) throw new Error("Failed to fetch orders");
 
     const ordersData = await res.json();
@@ -94,5 +146,5 @@ async function updateAdmin() {
   }
 }
 
-// Initialize admin table on page load
+// Initialize admin table if logged in
 updateAdmin();
