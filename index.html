@@ -1,87 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Vanguard Labs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<nav id="navbar">
-  <div class="nav-inner">
-    <div class="logo">Vanguard Labs</div>
-    <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#payments">Payments</a>
-      <a href="admin.html">Admin</a>
-      <button class="cart-btn" onclick="toggleCart()">
-        Cart <span class="cart-count" id="count">0</span>
-      </button>
-    </div>
   </div>
-</nav>
+</section>
+
+<section class="why-section" id="why">
+  <div class="section-title">
+    <h2>Why Vanguard Labs</h2>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <h3>Fast Processing</h3>
+      <p>
+        Orders are processed within 24 hours.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Worldwide Payments</h3>
+      <p>
+        Cryptocurrency accepted globally.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Australian Payments</h3>
+      <p>
+        PayID and bank transfer supported.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="payments-section" id="payments">
+  <div class="payment-box">
+    <h2>Payment Methods</h2>
+
+    <p>
+      Worldwide orders are accepted through cryptocurrency.
+    </p>
+
+    <p>
+      Australian customers may also use PayID or bank transfer.
+    </p>
+  </div>
+</section>
 
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
 <div class="cart" id="cart">
   <div class="cart-header">
     <h2>Your Cart</h2>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
+
+    <button onclick="toggleCart()">✕</button>
   </div>
 
   <div class="cart-items" id="cartItems"></div>
 
   <div class="cart-footer">
-    <div class="cart-total-row">
-      <span>Total</span>
-      <span>$<span id="total">0.00</span></span>
+    <div class="cart-total">
+      Total: $<span id="total">0.00</span>
     </div>
-    <button class="checkout-btn" onclick="goCheckout()">Checkout</button>
+
+    <button class="checkout-btn" onclick="goCheckout()">
+      Checkout
+    </button>
   </div>
 </div>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Premium Peptide Research</h1>
-    <p>Research grade compounds with worldwide crypto payments and Australian bank transfer options.</p>
-  </div>
-</section>
-
-<section class="section" id="products">
-  <div class="section-inner">
-    <h2>Products</h2>
-
-    <div class="products-grid">
-      <div class="product-card">
-        <h3>BPC-157</h3>
-        <p>$79.99</p>
-        <button onclick="addToCart('BPC-157',79.99)">Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <h3>TB-500</h3>
-        <p>$89.99</p>
-        <button onclick="addToCart('TB-500',89.99)">Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <h3>Retatrutide</h3>
-        <p>$98.99</p>
-        <button onclick="addToCart('Retatrutide',98.99)">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="payments">
-  <div class="section-inner">
-    <h2>Payment Methods</h2>
-    <p>Worldwide payments are accepted via cryptocurrency.</p>
-    <p>Australian customers can pay using PayID or bank transfer.</p>
-  </div>
-</section>
 
 <script src="script.js"></script>
 </body>
