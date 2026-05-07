@@ -1,97 +1,72 @@
-
-body{
-background:#070707;
-color:white;
-font-family:Arial;
-margin:0;
+* {
+  border-left: 1px solid rgba(255,0,0,0.2);
+  transition: 0.35s;
+  z-index: 9999;
+  padding: 30px;
 }
 
-nav{
-background:black;
-padding:20px;
-border-bottom:2px solid red;
+.cart.open {
+  right: 0;
 }
 
-.nav-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
+.cart-overlay {
+  display: none;
 }
 
-a,button{
-color:white;
+.cart-overlay.open {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
 }
 
-.hero{
-padding:100px 20px;
-text-align:center;
-background:#120000;
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.cart-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.product-card,.payment-box,.admin-panel,.admin-login{
-background:#111;
-border:1px solid red;
-padding:20px;
-border-radius:10px;
+.cart-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 15px;
 }
 
-button{
-background:red;
-border:none;
-padding:12px 20px;
-cursor:pointer;
+.cart-total {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.cart{
-position:fixed;
-right:-400px;
-top:0;
-width:320px;
-height:100%;
-background:black;
-transition:0.3s;
-padding:20px;
-}
+@media(max-width: 900px) {
+  .hero h1 {
+    font-size: 48px;
+  }
 
-.cart.open{
-right:0;
-}
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.cart-overlay{
-display:none;
-}
+  .products-section,
+  .why-section,
+  .payments-section {
+    padding: 100px 20px;
+  }
 
-.cart-overlay.open{
-display:block;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.5);
-}
-
-.checkout-page{
-max-width:700px;
-margin:auto;
-padding:40px 20px;
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-background:#111;
-border:1px solid #444;
-color:white;
-}
-
-.btc-address{
-background:#1b0000;
-padding:15px;
-word-break:break-all;
-border:1px solid red;
+  .stats-section {
+    padding: 0 20px 80px;
+  }
 }
