@@ -64,7 +64,7 @@ if (checkoutForm) {
 async function loginAdmin() {
   const password = document.getElementById("adminPassword").value;
 
-  const res = await fetch("/api/admin-login", {
+  const res = await fetch(`${BACKEND}/api/admin-login`, {
     method: "POST",
     headers: {"Content-Type":"application/json"},
     body: JSON.stringify({password})
@@ -81,7 +81,7 @@ async function loginAdmin() {
 }
 
 async function loadOrders(password) {
-  const res = await fetch("/api/orders", {
+  const res = await fetch(`${BACKEND}/api/orders`, {
     headers: {
       "x-admin-password": password
     }
