@@ -1,4 +1,4 @@
-const BACKEND = "https://vanguard-backend-yl1g.onrender.com/";
+const BACKEND = "https://vanguard-backend-yl1g.onrender.com";
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
 function toggleCart() {
@@ -45,7 +45,7 @@ if (checkoutForm) {
       total: cart.reduce((a,b)=>a+b.price,0).toFixed(2)
     };
 
-    const res = await fetch("/api/order", {
+    const res = await fetch(`${BACKEND}/api/order`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify(order)
