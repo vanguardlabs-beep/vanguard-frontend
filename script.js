@@ -1,4 +1,4 @@
-const BACKEND = "";
+const BACKEND = "https://vanguard-backend-yl1g.onrender.com/";
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
 function toggleCart() {
