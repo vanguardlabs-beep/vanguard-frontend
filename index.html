@@ -1,4 +1,140 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanguard Labs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="background-glow glow-1"></div>
+<div class="background-glow glow-2"></div>
+
+<nav class="navbar">
+  <div class="logo">VANGUARD LABS</div>
+
+  <div class="nav-links">
+    <a href="#products">Products</a>
+    <a href="#why">Why Us</a>
+    <a href="#payments">Payments</a>
+    <a href="admin.html">Admin</a>
+
+    <button class="cart-button" onclick="toggleCart()">
+      Cart (<span id="count">0</span>)
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      Research Grade Compounds
+    </div>
+
+    <h1>
+      Premium Peptide
+      <span>Research Platform</span>
+    </h1>
+
+    <p>
+      Worldwide cryptocurrency payments.
+      Australian PayID and bank transfer supported.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="primary-btn">
+        Browse Products
+      </a>
+
+      <a href="#payments" class="secondary-btn">
+        Payment Methods
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="stat-box">
+    <h2>24H</h2>
+    <p>Order Processing</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>Worldwide</h2>
+    <p>Crypto Payments</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>Premium</h2>
+    <p>Research Quality</p>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <div class="section-title">
+    <h2>Featured Products</h2>
+    <p>Research compounds with premium purity standards.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-glow"></div>
+
+      <h3>BPC-157</h3>
+      <p class="product-desc">
+        Research peptide compound.
+      </p>
+
+      <div class="price-row">
+        <span class="price">$79.99</span>
+      </div>
+
+      <button onclick="addToCart('BPC-157',79.99)">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-glow"></div>
+
+      <h3>TB-500</h3>
+      <p class="product-desc">
+        Research peptide compound.
+      </p>
+
+      <div class="price-row">
+        <span class="price">$89.99</span>
+      </div>
+
+      <button onclick="addToCart('TB-500',89.99)">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-glow"></div>
+
+      <h3>Retatrutide</h3>
+      <p class="product-desc">
+        Research peptide compound.
+      </p>
+
+      <div class="price-row">
+        <span class="price">$98.99</span>
+      </div>
+
+      <button onclick="addToCart('Retatrutide',98.99)">
+        Add To Cart
+      </button>
+    </div>
 
   </div>
 </section>
