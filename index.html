@@ -4,289 +4,84 @@
 <meta charset="UTF-8">
 <title>Vanguard Labs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
-<!-- CART DRAWER -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-<div class="cart" id="cart">
-  <div class="cart-header">
-    <h2>Your Cart</h2>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty">Your cart is empty.</div>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total-row">
-      <span>Total</span>
-      <span class="cart-total-amount">$<span id="total">0.00</span></span>
-    </div>
-    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-    <p class="cart-note">Secure checkout · Worldwide delivery</p>
-  </div>
-</div>
-
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
     <div class="logo">Vanguard Labs</div>
     <div class="nav-links">
       <a href="#products">Products</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-      <a href="#admin" class="nav-admin">Admin</a>
+      <a href="#payments">Payments</a>
+      <a href="admin.html">Admin</a>
       <button class="cart-btn" onclick="toggleCart()">
         Cart <span class="cart-count" id="count">0</span>
       </button>
     </div>
-    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#products" onclick="toggleMobileMenu()">Products</a>
-    <a href="#about" onclick="toggleMobileMenu()">About Us</a>
-    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-    <a href="#admin" onclick="toggleMobileMenu()">Admin</a>
-    <button class="cart-btn" onclick="toggleCart(); toggleMobileMenu()">
-      Cart <span class="cart-count" id="countMobile">0</span>
-    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="grid-lines"></div>
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<div class="cart" id="cart">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span>$<span id="total">0.00</span></span>
+    </div>
+    <button class="checkout-btn" onclick="goCheckout()">Checkout</button>
+  </div>
+</div>
+
+<section class="hero">
   <div class="hero-content">
-    <div class="badge"><span class="badge-dot"></span> Research Grade Peptides</div>
-    <h1>
-      <span class="h1-dim">Premium</span><br>
-      <span class="h1-accent">Peptide</span><br>
-      Research
-    </h1>
-    <p class="hero-sub">Precision-synthesized compounds for serious researchers. Lab-verified purity, worldwide delivery, and discreet packaging.</p>
-    <div class="hero-btns">
-      <a href="#products" class="btn-primary">Explore Products</a>
-      <a href="#about" class="btn-outline">Our Standards →</a>
-    </div>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">99.2%</div>
-        <div class="stat-label">Avg. purity</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Compounds</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">120+</div>
-        <div class="stat-label">Countries shipped</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">48hr</div>
-        <div class="stat-label">Dispatch time</div>
-      </div>
-    </div>
+    <h1>Premium Peptide Research</h1>
+    <p>Research grade compounds with worldwide crypto payments and Australian bank transfer options.</p>
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="section" id="products">
   <div class="section-inner">
-    <div class="section-tag">Catalogue</div>
-    <div class="section-title">Featured Compounds</div>
-    <p class="section-sub">All products are for research purposes only. Third-party lab reports available for every batch.</p>
+    <h2>Products</h2>
+
     <div class="products-grid">
       <div class="product-card">
-        <div class="product-tag">Popular</div>
-        <div class="product-name">GHK-Cu</div>
-        <div class="product-desc">Copper peptide complex. For research purposes only.</div>
-        <div class="product-price">$109.99</div>
-        <button class="product-btn" onclick="addToCart('GHK-Cu', 109.99)">Add to Cart</button>
+        <h3>BPC-157</h3>
+        <p>$79.99</p>
+        <button onclick="addToCart('BPC-157',79.99)">Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <div class="product-name">Retatrutide</div>
-        <div class="product-desc">Triple agonist compound. For research purposes only.</div>
-        <div class="product-price">$98.99</div>
-        <button class="product-btn" onclick="addToCart('Retatrutide', 98.99)">Add to Cart</button>
+        <h3>TB-500</h3>
+        <p>$89.99</p>
+        <button onclick="addToCart('TB-500',89.99)">Add to Cart</button>
       </div>
+
       <div class="product-card">
-        <div class="product-name">BPC-157</div>
-        <div class="product-desc">Body protection compound. For research purposes only.</div>
-        <div class="product-price">$79.99</div>
-        <button class="product-btn" onclick="addToCart('BPC-157', 79.99)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <div class="product-name">TB-500</div>
-        <div class="product-desc">Thymosin beta-4 fragment. For research purposes only.</div>
-        <div class="product-price">$89.99</div>
-        <button class="product-btn" onclick="addToCart('TB-500', 89.99)">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <div class="product-name">Ipamorelin</div>
-        <div class="product-desc">Growth hormone secretagogue. For research purposes only.</div>
-        <div class="product-price">$69.99</div>
-        <button class="product-btn" onclick="addToCart('Ipamorelin', 69.99)">Add to Cart</button>
+        <h3>Retatrutide</h3>
+        <p>$98.99</p>
+        <button onclick="addToCart('Retatrutide',98.99)">Add to Cart</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES STRIP -->
-<section class="features-section">
+<section class="section" id="payments">
   <div class="section-inner">
-    <div class="section-tag">Why Vanguard</div>
-    <div class="section-title">Built for Researchers</div>
-    <p class="section-sub">We hold every batch to exacting standards so you can focus on what matters.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🔬</div>
-        <div class="feature-title">Third-party verified</div>
-        <div class="feature-desc">Every batch tested by independent labs. CoA reports included with every order at no extra cost.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-title">Secure checkout</div>
-        <div class="feature-desc">Visa, Mastercard, Apple Pay, Google Pay & crypto. We never store payment details on our servers.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📦</div>
-        <div class="feature-title">Worldwide delivery</div>
-        <div class="feature-desc">Discreet, temperature-controlled packaging shipped to 120+ countries within 48 hours of dispatch.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚗️</div>
-        <div class="feature-title">Pharmaceutical grade</div>
-        <div class="feature-desc">≥98% purity on all compounds. Synthesised in certified GMP facilities with full traceability.</div>
-      </div>
-    </div>
+    <h2>Payment Methods</h2>
+    <p>Worldwide payments are accepted via cryptocurrency.</p>
+    <p>Australian customers can pay using PayID or bank transfer.</p>
   </div>
 </section>
-
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-tag">About Us</div>
-        <div class="section-title">Science Without Compromise</div>
-        <p class="section-sub">Vanguard Labs was founded by researchers, for researchers. We believe access to high-purity compounds shouldn't require navigating a maze of unreliable suppliers. Every product we carry meets our own internal benchmark before it reaches you.</p>
-        <p class="section-sub" style="margin-top:-10px">Our team reviews every batch personally. If a run doesn't meet our standard, it doesn't ship — it's that simple.</p>
-        <a href="#contact" class="btn-primary">Get in Touch</a>
-      </div>
-      <div class="about-visual">
-        <div class="cert-label">Quality Certifications</div>
-        <div class="cert-row"><div class="cert-dot"></div><div class="cert-name">HPLC Purity Testing</div><div class="cert-status">Active</div></div>
-        <div class="cert-row"><div class="cert-dot"></div><div class="cert-name">Mass Spectrometry Verified</div><div class="cert-status">Active</div></div>
-        <div class="cert-row"><div class="cert-dot"></div><div class="cert-name">GMP Certified Synthesis</div><div class="cert-status">Active</div></div>
-        <div class="cert-row"><div class="cert-dot"></div><div class="cert-name">Independent CoA Reports</div><div class="cert-status">Active</div></div>
-        <div class="cert-row"><div class="cert-dot"></div><div class="cert-name">Cold-chain Packaging</div><div class="cert-status">Active</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PAYMENTS -->
-<section class="payments-section" id="payments">
-  <div class="section-inner">
-    <div class="payments-inner">
-      <div class="section-tag">Payments</div>
-      <div class="section-title">Secure Transactions</div>
-      <p class="section-sub">All transactions are processed through certified third-party providers. We do not store any credit card or wallet information on our servers.</p>
-      <div class="payment-methods">
-        <div class="pay-pill">💳 Visa</div>
-        <div class="pay-pill">💳 Mastercard</div>
-        <div class="pay-pill">🍎 Apple Pay</div>
-        <div class="pay-pill">G Google Pay</div>
-        <div class="pay-pill">₿ Crypto</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="section-inner">
-    <div class="contact-inner">
-      <div class="section-tag" style="text-align:center">Contact</div>
-      <div class="section-title" style="text-align:center">Get in Touch</div>
-      <p class="section-sub" style="text-align:center;margin:16px auto 0;max-width:420px">Questions about an order, product, or bulk enquiry? We reply within one business day.</p>
-      <form class="contact-form" id="contactForm" onsubmit="handleContact(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First name</label>
-            <input type="text" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label>Last name</label>
-            <input type="text" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email address</label>
-          <input type="email" placeholder="jane@lab.com" required />
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell us about your research or enquiry…" required></textarea>
-        </div>
-        <button type="submit" class="contact-submit" id="contactSubmit">Send Message</button>
-        <p class="contact-success" id="contactSuccess" style="display:none">✓ Message sent! We'll be in touch soon.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ADMIN PANEL -->
-<section class="admin-section" id="admin">
-  <div class="section-inner">
-    <div class="section-tag">Internal</div>
-    <div class="section-title">Admin Panel</div>
-    <p class="section-sub">Live order overview. Updates automatically.</p>
-    <div class="admin-controls">
-      <button class="btn-outline-sm" onclick="updateAdmin()">↻ Refresh</button>
-      <span class="admin-status" id="adminStatus">Loading orders...</span>
-    </div>
-    <div class="admin-table-wrap">
-      <table class="admin-table">
-        <thead>
-          <tr>
-            <th>Order #</th>
-            <th>Items</th>
-            <th>Total</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Update</th>
-          </tr>
-        </thead>
-        <tbody id="orders"></tbody>
-      </table>
-    </div>
-    <div class="admin-empty" id="adminEmpty" style="display:none">No orders yet.</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="logo" style="margin-bottom:8px">Vanguard Labs</div>
-      <p class="footer-copy">© 2026 Vanguard Labs. All rights reserved.<br>All products are for research purposes only.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#products">Products</a>
-      <a href="#about">About Us</a>
-      <a href="#payments">Payments</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 </body>
