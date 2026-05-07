@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checkout - Vanguard Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="checkout-page">
+  <h1>Checkout</h1>
+
+  <form id="checkoutForm">
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <textarea id="address" placeholder="Shipping Address" required></textarea>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <div class="payment-box">
+    <h2>Payment Instructions</h2>
+
+    <p>Send payment to this Bitcoin address:</p>
+
+    <div class="btc-address">
+      bc1qped02jzzht8w9yd7kled2t45jpxpxd429vmqmy
+    </div>
+
+    <p>
+      After payment, send an email to
+      johnmegalli3@outlook.com with:
+    </p>
+
+    <ul>
+      <li>Your order number</li>
+      <li>Your Bitcoin transaction address</li>
+    </ul>
+
+    <p>Orders are processed within 24 hours and you will receive your tracking number by email.</p>
+
+    <p>For support, contact johnmegalli3@outlook.com</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
