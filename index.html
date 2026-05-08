@@ -1,211 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Vanguard Labs</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<div class="background-glow glow-1"></div>
-<div class="background-glow glow-2"></div>
+  <!-- BACKGROUND -->
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
 
-<nav class="navbar">
-  <div class="logo">VANGUARD LABS</div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
 
-  <div class="nav-links">
-    <a href="#products">Products</a>
-    <a href="#why">Why Us</a>
-    <a href="#payments">Payments</a>
-    <a href="admin.html">Admin</a>
-
-    <button class="cart-button" onclick="toggleCart()">
-      Cart (<span id="count">0</span>)
-    </button>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">
-      Research Grade Compounds
+    <div class="logo">
+      VANGUARD LABS
     </div>
 
-    <h1>
-      Vanguard
-      <span>Labs</span>
-    </h1>
+    <div class="nav-links">
 
-    <p>
-      Worldwide cryptocurrency payments.
-      Australian PayID and bank transfer supported.
-    </p>
+      <a href="#products">Products</a>
+      <a href="#why">Why Us</a>
+      <a href="#payments">Payments</a>
+      <a href="admin.html">Admin</a>
 
-    <div class="hero-buttons">
-      <a href="#products" class="primary-btn">
-        Browse Products
-      </a>
+      <button
+        class="cart-button"
+        onclick="toggleCart()"
+      >
+        Cart (<span id="count">0</span>)
+      </button>
 
-      <a href="#payments" class="secondary-btn">
-        Payment Methods
-      </a>
     </div>
-  </div>
-</section>
 
-<section class="stats-section">
-  <div class="stat-box">
-    <h2>24 Hour</h2>
-    <p>Order Processing</p>
-  </div>
+  </nav>
 
-  <div class="stat-box">
-    <h2>Australian</h2>
-    <p>Made and Tested</p>
-  </div>
+  <!-- HERO -->
+  <section class="hero">
 
-  <div class="stat-box">
-    <h2>98%> Purity</h2>
-    <p>Lab results provided</p>
-  </div>
-</section>
+    <div class="hero-content">
 
-<section class="products-section" id="products">
-  <div class="section-title">
-    <h2>Featured Products</h2>
-    <p>Research compounds with premium purity standards.</p>
-  </div>
-
-  <div class="products-grid">
-
-    <div class="product-card">
-      <div class="product-glow"></div>
-
-      <h3>Retatrutide</h3>
-      <p class="product-desc">
-        Triple-hormone receptor agonist.
-      </p>
-
-      <div class="price-row">
-        <span class="price">AU$150.00</span>
+      <div class="hero-badge">
+        Premium Research Platform
       </div>
 
-      <button onclick="addToCart('Retatrutide',150.00)">
-        Add To Cart
-      </button>
-    </div>
+      <h1>
+        Vanguard
+        <span>Labs</span>
+      </h1>
 
-    <div class="product-card">
-      <div class="product-glow"></div>
-
-      <h3>GHK-CU</h3>
-      <p class="product-desc">
-        Copper peptide containing 3 amino acids.
+      <p>
+        Australian owned and tested.
+        Cryptocurrency, PayID and bank transfer accepted.
       </p>
 
-      <div class="price-row">
-        <span class="price">AU$140.00</span>
+      <div class="hero-buttons">
+
+        <a
+          href="#products"
+          class="primary-btn"
+        >
+          Browse Products
+        </a>
+
+        <a
+          href="#payments"
+          class="secondary-btn"
+        >
+          Payment Methods
+        </a>
+
       </div>
 
-      <button onclick="addToCart('GHK-CU',140.00)">
-        Add To Cart
-      </button>
     </div>
 
-    <div class="product-card">
-      <div class="product-glow"></div>
+  </section>
 
-      <h3>HGH</h3>
-      <p class="product-desc">
-        Large peptide hormone consisting of 191 amino acids.
+  <!-- STATS -->
+  <section class="stats-section">
+
+    <div class="stat-box">
+      <h2>24 Hour</h2>
+      <p>Order Processing</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>Australian</h2>
+      <p>Owned and Tested</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>98%+</h2>
+      <p>Purity & Lab Results</p>
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section
+    class="products-section"
+    id="products"
+  >
+
+    <div class="section-title">
+
+      <h2>Featured Products</h2>
+
+      <p>
+        Research compounds with premium purity standards.
       </p>
 
-      <div class="price-row">
-        <span class="price">AU$250.00</span>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 1</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$100.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 1',100.00)">
+          Add To Cart
+        </button>
+
       </div>
 
-      <button onclick="addToCart('HGH',250.00)">
-        Add To Cart
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 2</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$120.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 2',120.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 3</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$140.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 3',140.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 4</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$160.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 4',160.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 5</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$180.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 5',180.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 6</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$200.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 6',200.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+      <!-- PRODUCT 7 -->
+      <div class="product-card">
+
+        <div class="product-glow"></div>
+
+        <h3>Product 7</h3>
+
+        <p class="product-desc">
+          Product description here.
+        </p>
+
+        <div class="price-row">
+          <span class="price">AU$220.00</span>
+        </div>
+
+        <button onclick="addToCart('Product 7',220.00)">
+          Add To Cart
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+  <section
+    class="why-section"
+    id="why"
+  >
+
+    <div class="section-title">
+      <h2>Why Vanguard Labs</h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+
+        <h3>Fast Processing</h3>
+
+        <p>
+          Orders are processed within 24 hours.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <h3>Australian Founded</h3>
+
+        <p>
+          Australian owned and tested products.
+        </p>
+
+      </div>
+
+      <div class="why-card">
+
+        <h3>Lab Results Available</h3>
+
+        <p>
+          Lab testing documentation available on request.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PAYMENTS -->
+  <section
+    class="payments-section"
+    id="payments"
+  >
+
+    <div class="payment-box">
+
+      <h2>Payment Methods</h2>
+
+      <p>
+        Cryptocurrency accepted worldwide.
+      </p>
+
+      <p>
+        Australian customers may also use PayID or bank transfer.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CART OVERLAY -->
+  <div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="toggleCart()"
+  ></div>
+
+  <!-- CART -->
+  <div
+    class="cart"
+    id="cart"
+  >
+
+    <div class="cart-header">
+
+      <h2>Your Cart</h2>
+
+      <button onclick="toggleCart()">
+        ✕
       </button>
+
+    </div>
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    ></div>
+
+    <div class="cart-footer">
+
+      <div class="cart-total">
+        Total:
+        <span id="total">AU$0.00</span>
+      </div>
+
+      <button
+        class="checkout-btn"
+        onclick="goCheckout()"
+      >
+        Checkout
+      </button>
+
     </div>
 
   </div>
-</section>
 
-<section class="why-section" id="why">
-  <div class="section-title">
-    <h2>Why Vanguard Labs</h2>
-  </div>
+  <script src="script.js"></script>
 
-  <div class="why-grid">
-
-    <div class="why-card">
-      <h3>Fast Processing</h3>
-      <p>
-        Orders are processed within 24 hours.
-      </p>
-    </div>
-
-    <div class="why-card">
-      <h3>Australian Founded</h3>
-      <p>
-        We're a team of researchers based in Australia.
-      </p>
-    </div>
-
-    <div class="why-card">
-      <h3>Lab Results Provided</h3>
-      <p>
-        We provide lab results for all peptides, just ask our friendly team via email on the checkout page.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section class="payments-section" id="payments">
-  <div class="payment-box">
-    <h2>Payment Methods</h2>
-
-    <p>
-      Worldwide orders are accepted through cryptocurrency.
-    </p>
-
-    <p>
-      Australian customers may also use PayID or bank transfer.
-    </p>
-  </div>
-</section>
-
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-
-<div class="cart" id="cart">
-  <div class="cart-header">
-    <h2>Your Cart</h2>
-
-    <button onclick="toggleCart()">✕</button>
-  </div>
-
-  <div class="cart-items" id="cartItems"></div>
-
-  <div class="cart-footer">
-    <div class="cart-total">
-      Total: $<span id="total">0.00</span>
-    </div>
-
-    <button class="checkout-btn" onclick="goCheckout()">
-      Checkout
-    </button>
-  </div>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
