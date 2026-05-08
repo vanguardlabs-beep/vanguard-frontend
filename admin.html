@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Admin</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Vanguard Labs Admin</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="admin-login">
-  <h1>Admin Login</h1>
+  <!-- BACKGROUND GLOWS -->
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
 
-  <input type="password" id="adminPassword" placeholder="Password">
-  <button onclick="loginAdmin()">Login</button>
-</div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
 
-<div class="admin-panel" id="adminPanel" style="display:none;">
-  <h1>Orders</h1>
+    <div class="logo">
+      VANGUARD LABS
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Order</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Address</th>
-        <th>Total</th>
-      </tr>
-    </thead>
+    <div class="nav-links">
+      <a href="index.html">Store</a>
+      <a href="#">Orders</a>
+    </div>
 
-    <tbody id="orders"></tbody>
-  </table>
-</div>
+  </nav>
 
-<script src="script.js"></script>
+  <!-- LOGIN -->
+  <div class="admin-login">
+
+    <h1>Admin Dashboard</h1>
+
+    <p style="color:#9f9f9f; margin-bottom:25px; text-align:center;">
+      Secure order management portal
+    </p>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Enter admin password"
+    >
+
+    <button onclick="loginAdmin()">
+      Access Dashboard
+    </button>
+
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div
+    class="admin-panel"
+    id="adminPanel"
+    style="display:none;"
+  >
+
+    <!-- TITLE -->
+    <div class="section-title">
+
+      <h2>Orders Dashboard</h2>
+
+      <p>
+        Review customer orders and payment information
+      </p>
+
+    </div>
+
+    <!-- ORDERS -->
+    <div id="orders"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
